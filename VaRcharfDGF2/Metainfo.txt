@@ -1,0 +1,59 @@
+
+Published in:		Applied Quantitative Finance
+
+Description:		'VaRcharfDGF2 computes the Fourier transform of an approximating Gaussian cumulative distribution function (CDF) for the class of quadratic forms of Gaussian vectors. Notes: This is an auxiliary function to VaRcdfDG.'
+
+Keywords:		Delta-Gamma-models, Fourier transform
+
+See also:		VaRcdfDG, VaRcharfDG, VaRcorrfDGF2, VaRqDG, XFGVaRcharfDGtest, XFGqDGtest
+
+Author:			Awdesch Melzer
+
+Submitted:		Sun, June 02 2013 by Awdesch Melzer
+
+Usage:			r = VaRcharfDGF2(t,l)
+
+Input:			t- the complex argument of the transformed function
+
+ l- a list defining the distribution contains at least the following components: 
+ theta - the constant term 
+ delta - the linear term 
+ lambda - the diagonal of the quadratic term
+
+Output:			r- the (complex) value of the Fourier inversion at t
+
+Example:
+
+ theta = 0 
+ delta = c(1) 
+ lambda = c(1) 
+ par = list() 
+ par$theta = theta 
+ par$delta = delta 
+ par$lambda = lambda 
+ compl = function (re, im){ # Complex array generation 
+ if(missing(re)){ 
+ stop("compl: no composed object for real part") 
+ } 
+ if(missing(im)){ 
+ im = 0*(re<=Inf) 
+ } 
+ if(nrow(matrix(re))!=nrow(matrix(im))){ 
+ stop("compl: dim(re)<>dim(im)") 
+ } 
+ z = list() 
+ z$re = re 
+ z$im = im 
+ return(z) 
+ } 
+ VaRcharfDGF2(compl(c(-1,0,1),c(0,0,0)),par)
+
+Result: Contents of r$re 
+ [1,] 0.13333 
+ [2,] 0 
+ [3,] 0.13333 
+
+ Contents of r$im 
+ [1,] -0.23369 
+ [2,] 0 
+ [3,] 0.23369 

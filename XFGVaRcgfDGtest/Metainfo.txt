@@ -1,0 +1,33 @@
+Published in: Applied Quantitative Finance
+
+Description: 'XFGVaRcgfDGtest plots the cumulant generating function for a distribution, which is close to normal distribution. The graph is close to a parabola.'
+
+Keywords: Delta-Gamma-models, cumulant generating function
+
+See also: VaRcgfDG, VaRcharfDG
+
+Author: Awdesch Melzer
+
+Submitted: Mon, June 03 2013 by Awdesch Melzer
+
+Output: - Plot of the cumulant generating function for a distribution, which is close to normal distribution. The graph is close to a parabola.
+
+Example:
+
+XFGVaRcgfDGtest = function(par,n,xlim){
+dt = (xlim[2]-xlim[1])/(n-1)
+t = xlim[1] + (0:(n-1))*dt
+r = VaRcgfDG(compl(t,t*0),par)
+z1 = cbind(t,r$re)
+plot(z1,type="l",col="blue3",lwd=2, xlab="X",ylab="Y")
+title("cumulant generating function")
+}
+
+theta = 0
+delta = c(1)
+lambda = c(0.1)
+par = list()
+par$theta = theta
+par$delta = delta
+par$lambda = lambda
+XFGVaRcgfDGtest(par,100,c(-2,2))

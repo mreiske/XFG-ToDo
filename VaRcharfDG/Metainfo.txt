@@ -1,0 +1,63 @@
+
+Published in:		Applied Quantitative Finance
+
+Description:		'VaRcharfDG computes the characteristic function for the class of quadratic forms of Gaussian vectors.'
+
+Keywords:		Delta-Gamma-models, characteristic function
+
+See also:		VaRcdfDG, VaRcgfDG, VaRcharfDGF2, VaRqDG, XFGVaRcgfDGtest, XFGVaRcharfDGtest, XFGqDGtest
+
+Author:			Awdesch Melzer
+
+Submitted:		Sun, June 02 2013 by Awdesch Melzer
+
+Usage:			r = VaRcharfDG(t,par)
+
+Input:			t- the complex argument to the cgf
+
+ par- a list defining the distribution# contains at least the following components: 
+ theta - the constant term 
+ delta - the linear term 
+ lambda - the diagonal of the quadratic term
+
+Output: 		r- the value of the cgf at t
+
+Example:
+
+'Plots the real (blue line) and the imaginary part (red line) of the characteristic function for a distribution, which is close to a chi^2 distribution with one degree of freedom.'
+
+ XFGVaRcharfDGtest = function(par,n,xlim){ 
+ compl = function (re, im){ # Complex array generation 
+ if(missing(re)){ 
+ stop("compl: no composed object for real part") 
+ } 
+ if(missing(im)){ 
+ im = 0*(re<=Inf) 
+ } 
+ if(nrow(matrix(re))!=nrow(matrix(im))){ 
+ stop("compl: dim(re)<>dim(im)") 
+ } 
+ z = list() 
+ z$re = re 
+ z$im = im 
+ return(z) 
+ } 
+
+ dt = (xlim[2]-xlim[1])/(n-1) 
+ t = xlim[1] + (0:(n-1))*dt 
+ r = VaRcharfDG(compl(t,t*0),par) 
+ z1 = cbind(t,r$re) 
+ z2 = cbind(t,r$im) 
+ plot(z1, type="l", col="blue3", lwd=2, ylab="Y",xlab="X",ylim=c(min(r$re,r$im),max(r$re,r$im))) 
+ lines(z2,col="red3", lwd=2) 
+ title("Characteristic function") 
+ } 
+
+ theta = 0 
+ delta = c(0) 
+ lambda = c(1.4142) 
+ par = list() 
+ par$theta = theta 
+ par$delta = delta 
+ par$lambda = lambda 
+ XFGVaRcharfDGtest(par,300,c(-40,40)) 

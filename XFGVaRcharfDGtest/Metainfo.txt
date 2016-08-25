@@ -1,0 +1,15 @@
+Published in: Applied Quantitative Finance
+
+Description: 'XFGVaRcharfDGtest plots the real (blue line) and the imaginary part (red line) of the characteristic function for a distribution, which is close to a chi^2 distribution with one degree of freedom.'
+
+Keywords: Delta-Gamma-models, characteristic function
+
+See also: VaRcharfDG, VaRcharfDGF2
+
+Author: Awdesch Melzer
+
+Submitted: Mon, June 03 2013 by Awdesch Melzer
+
+Output: - None
+
+Example: 'Plot of the real (blue line) and the imaginary part (red line) of the characteristic function for a distribution, which is close to a chi^2 distribution with one degree of freedom.'
