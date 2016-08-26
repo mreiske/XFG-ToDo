@@ -1,32 +1,3 @@
-# ---------------------------------------------------------------------
-# Book:        XFG
-# ---------------------------------------------------------------------
-# See also:    XFGSPDcb2, XFGSPDoneday, XFGSPDonemonth, XFGSPDonematurity
-#              XFGIBT01, XFGIBT02, XFGIBT03
-# ---------------------------------------------------------------------
-# Keywords:    locap polynomial smoothing, kernel smoothing, SPD,
-#              State-Price Density, bandwidth, confidence bands,
-#              confidence internval, implied volatility, Black-Scholes,
-#              Black Scholes, semiparametric, standardize, derivative,
-#              option price
-# ---------------------------------------------------------------------
-# Quantlet:    XFGSPDcb
-# ---------------------------------------------------------------------
-# Description: Outputs SPD estimates for DAX option data on Jan 3, 1997
-#              on Jan 31, 1997 and the bootstrap confidence intervals
-#	           for the first date. Both SPDs correspond to the same maturity
-#              (49 days).
-#              Computes the State-Price Density for European
-#              options using the result of Breeden and Litzenberger and
-#              compares with estimates of Rookley's method.
-#              For more insight, please follow the description of
-#              the subroutines.
-# ---------------------------------------------------------------------
-# Usage:       -
-# ---------------------------------------------------------------------
-# Author:      Awdesch Melzer, 20140619
-# ---------------------------------------------------------------------
-
 rm(list=ls(all=TRUE))
 graphics.off()
 
@@ -39,68 +10,6 @@ library(KernSmooth)
 
 # set working directory for data loading
 # setwd("/Users/...")
-
-
-#######################################################################
-########################### SUBROUTINES ###############################
-#######################################################################
-# ---------------------------------------------------------------------
-# Quantlet:      SPDlp2
-# ---------------------------------------------------------------------
-# Description: Computes the State-Price Density for European options using 
-#             the result of Breeden and Litzenberger. 
-# ---------------------------------------------------------------------
-# Usage       [$fstar $delta $gamma]=SPDlp2(RawData,xGrid, locband, metric)
-# ---------------------------------------------------------------------
-# Input       
-# Parameter   RawData
-# Definition   (nx6) data matrix, where  
-#              the first column contains the forward prices, the second 
-#              the strikes, the third the interest rates, the
-#              fourth maturities [in years], the fifth the option
-#              prices, the sixth contains the types of the options 
-#              (1 means a call,  0 a put).
-#              The raw data may correspond either to a whole surface or 
-#              only to a given smile.
-# Parameter   xGrid
-# Definition   m x 1 vector of moneyness (or strikes) for which you want  
-#              to estimate the State-Price density. 
-# Parameter   locband
-# Definition   Bandwidth for estimating the smile and its derivatives.  
-#              The bandwidth can be global or local. If locband is chosen equal to 0,
-#              then the locband is automatically chosen via the EBBS algorithm. Take care
-#              that the nonparametric estimation is done on standardized data.
-# Output      
-# Parameter   fstar
-# Definition  m x 1 vector of SPD estimates on xgrid.
-# Parameter   delta
-# Definition  m x 1 vector of delta estimates on xgrid.
-# Parameter   gamma
-# Definition  m x 1 vector of gamma estimates on xgrid.
-# ---------------------------------------------------------------------
-# Notes       To estimate the SPD,
-#             this algorithm first estimates a volatility smile and its 
-#             first two derivatives wrt. the moneyness (=(S-Divs)/Strike) 
-#             using local polynomial estimation. The LP estimation is obtained 
-#             using local bandwidths automatically determined by the EBBS  
-#             algorithm from Ruppert.
-#             In a second step, we use the result of Rookley which is 
-#             entailed in the quantlet "spdlp".  
-#	      You may use this quantlet with raw data corresponding only
-#	      to a smile or to a whole volatility surface.  
-# ---------------------------------------------------------------------
-# Keywords    State-Price Density
-# ---------------------------------------------------------------------   
-# Reference   Breeden, D. and Litzenberger, R. (1978). "Prices of state-contigent 
-#	      claims implicit in option prices," Journal of Business 51: 621-651 
-#
-#	      Rookley, C. (1997). "Fully exploiting the information content of intra-day 
-#	      option quotes: Applications in option pricing and risk management, mimeo.
-#	      
-#             Ruppert (1997): "Empirical-bias bandwidths for local polynomial 
-#  	      nonparametric regression and density estimation"  
-#	      Journal of the American Statistical Association 92: 1049-1062
-# ---------------------------------------------------------------------
 
 SPDlp2 = function(RawData, xGrid, locband, metric){
  

@@ -1,4 +1,3 @@
-
 Published in:		Applied Quantitative Finance
 
 Description:		'VaRcharfDG computes the characteristic function for the class of quadratic forms of Gaussian vectors.'

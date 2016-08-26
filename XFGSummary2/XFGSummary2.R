@@ -1,30 +1,3 @@
-# -----------------------------------------------------------------------
-# Book:          XFG - Applied Quantitative Finance
-# -----------------------------------------------------------------------
-# See also:      XFGprior, XFGparameter, XFGvolabs, XFGstdinnov, 
-#                XFGsvtjparameter, XFGsvtsvjqq
-# -----------------------------------------------------------------------
-# Quantlet:      XFGSummary2
-# -----------------------------------------------------------------------
-# Description:   XFGSummary2 provides an overview of the data used in the
-#                estimation of the SV, SVt and SVJ model. The data
-#                consists of daily continuously compounded returns of the
-#                DAX index, the Dow Jones index and the GBP/USD FX rate.
-#                All time series cover the period from 1 January, 1991 to
-#                21 March, 2007, yielding 4,231 observations.
-# -----------------------------------------------------------------------
-# Keywords:      summary, volatility, skewness, kurtosis, mean, quantile,
-#                Markov, time series 
-# -----------------------------------------------------------------------
-# Usage:         Set working directory to source file location. The 
-#                function is called by sumStat(X), with X being the data.
-# -----------------------------------------------------------------------
-# Datafile:      Returns.txt
-# -----------------------------------------------------------------------
-# Author:        Marius Lux, 2014/11/15
-# -----------------------------------------------------------------------
-
-
 # clear variables and close windows
 rm(list = ls(all = TRUE))
 graphics.off()

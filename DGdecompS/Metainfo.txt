@@ -1,4 +1,3 @@
-
 Published in:		Applied Quantitative Finance
 
 Description:		'DGdecompS computes the square root of a positive semi-definite matrix, using an eigen value decomposition. Notes: Square roots of matrices can also be computed by the Cholesky decomposition, which only works for positive definite matrices, but which is faster.'

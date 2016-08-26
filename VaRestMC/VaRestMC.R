@@ -1,47 +1,4 @@
-# ---------------------------------------------------------------------
-# Book:        XFG
-# ---------------------------------------------------------------------
-# See also:    XFGVaRestMC
-# ---------------------------------------------------------------------
-# Quantlet:    VaRestMC
-# ---------------------------------------------------------------------
-# Description: Partial Monte-Carlo method to calculate the Value at Risk (VaR)
-#              based on Delta-Gamma Approximation.
-# ---------------------------------------------------------------------
-# Usage:       VaRMC = VaRestMC(VaRdelta,VaRgamma,VaRcovmatrix, smethod, alpha, days, nsimu)
-# ---------------------------------------------------------------------
-# Input:
-# Parameter   VaRdelta  
-# Definition     m x 1 vector of first derivatives, aggregated delta matrix         
-# Parameter   VaRgamma
-# Definition     m x m Hessian matrix, aggregated gamma matrix
-# Parameter   VaRcovmatrix   
-# Definition     m x m covariance matrix, variance-covariance matrix for the underlying portfolio
-# Parameter   smethod
-# Definition     Monte-Carlo sampling method for VaR. Default set at "IS".
-#
-#                "PS": Plain vanilla sampling method
-#
-#                "MS": Moment matching sampling method       
-#
-#                "SS": Stratified Latin Hypercube sampling method        
-#
-#                "IS": Importance sampling method         
-#  
-# Parameter   alpha
-# Definition     Significance level for VaR estimation. (Default = 0.01)
-# Parameter   days
-# Definition     Estimation time horizon. (Default = 1 day)
-# Parameter   nsimu
-# Definition     Number of Monte-Carlo simulations. (Default = 1000)
-# ---------------------------------------------------------------------
-# Output:      
-# Parameter   VaRMC 
-# Definition     Estimated VaR
-# -------------------------------------------------------------------------
-# Author:     Awdesch Melzer 20130605
-# -------------------------------------------------------------------------
-    VaRestMC = function(VaRdelta, VaRgamma, VaRcovmatrix, smethod, alpha, days, nsimu){
+   VaRestMC = function(VaRdelta, VaRgamma, VaRcovmatrix, smethod, alpha, days, nsimu){
         if (missing(VaRdelta)){
             stop("Please enter a delta vector")
         }

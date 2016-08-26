@@ -1,22 +1,3 @@
-# ---------------------------------------------------------------------
-# Book:        XFG
-# ---------------------------------------------------------------------
-# See_also:    -
-# ---------------------------------------------------------------------
-# Quantlet:    XFGVaRestMC
-# ---------------------------------------------------------------------
-# Description: Illustrates the computation of the Value at Risk
-#              using the Delta-Gamma method
-#              "PS": Plain vanilla sampling method
-#              "MS": Moment matching sampling method
-#              "SS": Stratified Latin Hypercube sampling method        
-#              "IS": Importance sampling method      
-# ---------------------------------------------------------------------
-# Usage:       -
-# ---------------------------------------------------------------------
-# Author:      Awdesch Melzer 20130527
-# ---------------------------------------------------------------------
-  
   rm(list=ls(all=TRUE))
   graphics.off()
 

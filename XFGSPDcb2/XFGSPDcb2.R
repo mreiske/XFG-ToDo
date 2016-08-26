@@ -1,32 +1,3 @@
-# ---------------------------------------------------------------------
-# Book:        XFG
-# ---------------------------------------------------------------------
-# See also:    XFGIBT01, XFGIBT02, XFGIBT03,XFGSPDcb2, XFGSPDoneday, XFGSPDonemonth, XFGSPDonematurity
-# ---------------------------------------------------------------------
-# Quantlet:    XFGSPDcb2
-# ---------------------------------------------------------------------
-# Description: Outputs SPD estimates for DAX option data on Jan 3, 1997
-#              on Jan 31, 1997 and the bootstrap confidence intervals
-#	           for the first date. Both SPDs correspond to the same maturity
-#              (77 days) and are displayed on a moneyness metric.
-#              Computes the State-Price Density for European
-#              options using the result of Breeden and Litzenberger and
-#              compares with estimates of Rookley's method.
-#              For more insight, please follow the description of
-#              the subroutines.
-# ---------------------------------------------------------------------
-# Usage:       -
-# ---------------------------------------------------------------------
-# Author       Awdesch Melzer 20140621
-# ---------------------------------------------------------------------
-# Keywords:    locap polynomial smoothing, kernel smoothing, SPD,
-#              State-Price Density, bandwidth, confidence bands,
-#              confidence internval, implied volatility, Black-Scholes,
-#              Black Scholes, semiparametric, standardize, derivative,
-#              option price
-# ---------------------------------------------------------------------
-
-
 rm(list=ls(all=TRUE))
 graphics.off()
 

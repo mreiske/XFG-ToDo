@@ -1,25 +1,3 @@
-# ---------------------------------------------------------------------
-# Book:          XFG
-# ---------------------------------------------------------------------
-# See also:      XFGSPDoneday, XFGSPDonemonth, XFGSPDcb, XFGSPDcb2
-# ---------------------------------------------------------------------
-# Quantlet:      XFGSPDcom
-# ---------------------------------------------------------------------
-# Description:   Output SPD estimations using Implied Binomial Tree and 
-#	             Rookley's method for DAX option data on Jan 3, 1997
-#	             with time to maturity being 77 days.
-# ---------------------------------------------------------------------
-# Usage:         XFGSPDcom()
-# ---------------------------------------------------------------------
-# Author:        Awdesch Melzer
-# ---------------------------------------------------------------------
-# Keywords:      semiparametric, Black Scholes, Breeden Litzenberger,
-#                SPD, state-price density, implied volatility,
-#                European option, local polynomial regression, smoothing,
-#                derivative, linear interpolation, bisection method,
-#                delta, gamma, Rookley, IBT, implied binomial tree
-# ---------------------------------------------------------------------
-
 # clear cache and close windows
 rm(list=ls(all=TRUE))
 graphics.off()

@@ -1,4 +1,3 @@
-
 Published in:		Applied Quantitative Finance
 
 Description:		'VaRcumulantsDG compute the first n cumulants for the class of quadratic forms of Gaussian vectors. Notes: This function does not need the initial diagonalization. If the diagonalization has been done already, use VaRcumulantDG, which is faster.'

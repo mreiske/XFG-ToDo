@@ -1,4 +1,3 @@
-
 Published in:		Applied Quantitative Finance
 
 Description:		'computes the cumulative distribution function (CDF) of an approximated normal distribution for the class of quadratic forms of Gaussian vectors.'
@@ -20,21 +19,11 @@ Input:			x- the argument to the CDF
  delta - the linear term 
  lambda - the diagonal of the quadratic term
 
-
-
-
 Output:
-
 
 r- the value of the approximated normal CDF at x
 
-
-
-
 Example:
-
-
-
 
 theta = 0 
  delta = c(1) 

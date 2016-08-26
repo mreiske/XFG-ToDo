@@ -1,35 +1,3 @@
-# ---------------------------------------------------------------------
-# Book:        XFG
-# ---------------------------------------------------------------------
-# See also:    VaRcharfDG VaRcharfDGF2
-# ---------------------------------------------------------------------
-# Quantlet:    XFGVaRcharfDGtest
-# ---------------------------------------------------------------------
-# Description: XFGVaRcharfDGtest plots the real (blue line) and the
-#              imaginary part (red line) of the characteristic function
-#              for a distribution, which is close to a chi^2 distribution
-#              with one degree of freedom.
-# ---------------------------------------------------------------------
-# Usage:       -
-# ---------------------------------------------------------------------
-# Input:       None.
-# ---------------------------------------------------------------------
-# Output:      Plot of the real (blue line) and the imaginary part (red line)
-#	           of the characteristic function for a distribution,
-#              which is close to a chi^2 distribution with one degree of
-#	           freedom.
-# ---------------------------------------------------------------------
-# Keywords:    characteristic function, Delta-Gamma-models
-# ---------------------------------------------------------------------
-# Reference:   Jaschke, S. (2001). The Cornish-Fisher-Expansion in
-#              the Context of Delta-Gamma-Normal Approximations
-# ---------------------------------------------------------------------
-# Link:        http://www.jaschke-net.de/papers/CoFi.pdf Cornish-Fisher-Expansion
-# ---------------------------------------------------------------------
-# Author:      Awdesch Melzer 20130531
-# ---------------------------------------------------------------------
-
-
 rm(list=ls(all=TRUE))
 graphics.off()
 

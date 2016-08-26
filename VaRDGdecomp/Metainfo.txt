@@ -1,4 +1,3 @@
-
 Published in:		Applied Quantitative Finance
 
 Description:		'VaRDGdecomp uses a generalized eigenvalue decomposition to do a suitable coordinate change. The new risk factors are independently standard normal distributed and the new Hessian matrix (Gamma) is diagonal.'

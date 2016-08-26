@@ -1,38 +1,3 @@
-# ---------------------------------------------------------------------
-# Book:          XFG
-# ---------------------------------------------------------------------
-# See also:      spdbs, spdbl
-# ---------------------------------------------------------------------
-# Quantlet:      XFGSPDonemonth
-# ---------------------------------------------------------------------
-# Description:   Computes and plots the Black-Scholes and local 
-#		         polynomial SPD January 02, 1997 for tau="mat".
-#		         The SPDs are plotted for the range between firstXF 
-#                and lastXF.
-# ---------------------------------------------------------------------
-# Usage:         XFGSPDoneday(mat,firstXF,lastXF,stepwidth)
-# Input:      
-#   Parameter    mat
-#   Definition   maturity in year for which you want to compute
-#   Parameter	 firstXF 
-#   Definition 	 first value of the range for which you want to plot
-#		         the SPDs. XF means here stock price in T divided by 
-#                actual future price with expiration T.  
-#   Parameter	 lastXF 
-#   Definition 	 last value of the range for which you want to plot
-#		 the SPDs.
-#   Parameter    stepwidth
-#   Definition   2 x 1 vector, step between each estimation.		 
-# ---------------------------------------------------------------------
-# Author:        Awdesch Melzer
-# ---------------------------------------------------------------------
-# Keywords:      semiparametric, Black Scholes, Breeden Litzenberger,
-#                SPD, state-price density, implied volatility,
-#                European option, local polynomial regression, smoothing,
-#                derivative, linear interpolation, bisection method,
-#                delta, gamma
-# ---------------------------------------------------------------------
-
 rm(list=ls(all=TRUE))
 graphics.off()
 

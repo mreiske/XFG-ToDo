@@ -1,4 +1,3 @@
-
 Published in:		Applied Quantitative Finance
 
 Description: 		VaRDGdecompG computes the first and second derivatives with respect to the new risk factors.
