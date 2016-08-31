@@ -1,0 +1,9 @@
+Published in: Applied Quantitative Finance
+
+Description: Displays VaR time series
+
+Author: Germar Knöchlein, Awdesch Melzer
+
+Submitted: Fri, June 29 2012 by Dedy Dwi Prastyo
+
+Datafiles: XFGMMPL.dat, XFGPL.dat

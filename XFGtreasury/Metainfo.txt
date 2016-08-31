@@ -1,0 +1,9 @@
+Published in: Applied Quantitative Finance
+
+Description: Plots Treasury Yields
+
+Author: Germar Knöchlein, Awdesch Melzer
+
+Submitted: Sat, June 16 2012 by Dedy Dwi Prastyo
+
+Datafiles: XFGUSTF.dat

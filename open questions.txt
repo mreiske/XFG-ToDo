@@ -1,0 +1,17 @@
+optionprice is required by XFGIBT03.m.
+directly into XFGIBT03 ?
+
+XFGtimeseries2 fehlt eine Funktion Var..?
+
+XFGSummary2 input file wrong
+
+XFGsummary no keywords
+
+evtl fehtl iwro eine klammer: XFGSPDonemonth, XFGSPDcb
+
+XFGSPDcb2 many warnings, code ist nicht sauber
+
+XFGpp ??
+
+XFGLSK: JanuaryData.dat fehlt im Folder, server momentan down 
+

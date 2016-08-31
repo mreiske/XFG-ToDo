@@ -1,0 +1,9 @@
+Published in: Applied Quantitative Finance
+
+Description: Descriptive Statistics
+
+Author: Germar Knöchlein, Awdesch Melzer
+
+Submitted: Sat, June 16 2012 by Dedy Dwi Prastyo
+
+Datafiles: XFGINAAA.dat
