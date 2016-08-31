@@ -13,5 +13,15 @@ XFGSPDcb2 many warnings, code ist nicht sauber
 
 XFGpp ??
 
-XFGLSK: JanuaryData.dat fehlt im Folder, server momentan down 
+SERVER DOWN
 
+XFGLSK: JanuaryData.dat fehlt im Folder, server momentan down 
+XFGiv06: keine meta (auch 5, 2)
+
+XFGIBTcdk (matlab) does work. NW?
+XFGIBTcbc (gleich)
+
+add Eulerscheme to XFGIBT03, rename the plot
+XFGIBT02 + XFGIBT01, XFGexp_rtn_SRM_2d matlab
+
+VaRDGdecompG, VaRestMC ist nur eine funktuib?
