@@ -43,63 +43,63 @@ B       = diag(p)
      
 f       = 0
 repeat{
-f       = f+1
-Bold    = B  
-  j     = 1
-  while (j<=p){ 
-    m   = 1
-    while (m<j){
-      Bmj    = cbind(B[,m],B[,j])
-      T      = array(0,c(2,2,k))
-      T
-      T[,,1] = t(Bmj)%*%A[,,1]%*%Bmj
-      T[,,2] = t(Bmj)%*%A[,,2]%*%Bmj
-      T[,,3] = t(Bmj)%*%A[,,3]%*%Bmj
- 	  Q      = cbind(c(1,0),c(0,1))   # orthogonal matrix to start with
-	  g      = 0
-  	  repeat{
-         g          = g+1
-         Qold       = Q
-         Delta1     = array(Q,c(2,2,k))*T*(array(Q,c(2,2,k)))
-         diag(Delta1[ , ,1])
-         Delta      = array(c(diag(Delta1[,,1])), c(2,1,3))
-         Delta[,,1] = c(diag(Delta1[,,1]))
-         Delta[,,2] = c(diag(Delta1[,,2]))
-         Delta[,,3] = c(diag(Delta1[,,3]))             
-         a          = t(Delta[,,1])
-         b          = t(Delta[,,2])
-         c          = t(Delta[,,3])
-         abc        = matrix(cbind(a,b,c),2,3)
-         abcd       = t(abc)
-         d          = N*(abcd[,1]-abcd[,2])/(abcd[,1]*abcd[,2])
-         Tsum1      = array(0, c(2,2,k))
-         Tsum1[,,1] = d[1]*T[,,1]
-         Tsum1[,,2] = d[2]*T[,,2]
-         Tsum1[,,3] = d[3]*T[,,3]
-         f          = sum(Tsum1[,1,][1,])
-         g          = sum(Tsum1[,1,][2,])
-         h          = sum(Tsum1[,2,][1,])
-         y          = sum(Tsum1[,2,][2,])
-         Tsum       = matrix(rbind(f,g,h,y),2,2)
-         e          = eigen(Tsum)     # spectral decomposition
-         Q          = e$vectors       # find eigenvectors of Tsum
-  	     maxim      = max(abs(Q-Qold))
-  	     if ((maxim<preQ)|(g>maxiter)) break
-  	  }  
-      J      = diag(p)
-      J[m,m] = Q[1,1]
-      J[m,j] = Q[1,2]
-      J[j,m] = Q[2,1]
-      J[j,j] = Q[2,2]
-      B      = B%*%J
-      m      = m+1
-      print(m)
-      }
-      j      = j+1
-      }
+    f       = f+1
+    Bold    = B  
+    j       = 1
+    while (j<=p){ 
+        m   = 1
+        while (m<j){
+            Bmj    = cbind(B[,m],B[,j])
+            T      = array(0,c(2,2,k))
+            T
+            T[,,1] = t(Bmj)%*%A[,,1]%*%Bmj
+            T[,,2] = t(Bmj)%*%A[,,2]%*%Bmj
+            T[,,3] = t(Bmj)%*%A[,,3]%*%Bmj
+            Q      = cbind(c(1,0),c(0,1))   # orthogonal matrix to start with
+            g      = 0
+            repeat{
+                g          = g+1
+                Qold       = Q
+                Delta1     = array(Q,c(2,2,k))*T*(array(Q,c(2,2,k)))
+                diag(Delta1[ , ,1])
+                Delta      = array(c(diag(Delta1[,,1])), c(2,1,3))
+                Delta[,,1] = c(diag(Delta1[,,1]))
+                Delta[,,2] = c(diag(Delta1[,,2]))
+                Delta[,,3] = c(diag(Delta1[,,3]))             
+                a          = t(Delta[,,1])
+                b          = t(Delta[,,2])
+                c          = t(Delta[,,3])
+                abc        = matrix(cbind(a,b,c),2,3)
+                abcd       = t(abc)
+                d          = N*(abcd[,1]-abcd[,2])/(abcd[,1]*abcd[,2])
+                Tsum1      = array(0, c(2,2,k))
+                Tsum1[,,1] = d[1]*T[,,1]
+                Tsum1[,,2] = d[2]*T[,,2]
+                Tsum1[,,3] = d[3]*T[,,3]
+                f          = sum(Tsum1[,1,][1,])
+                g          = sum(Tsum1[,1,][2,])
+                h          = sum(Tsum1[,2,][1,])
+                y          = sum(Tsum1[,2,][2,])
+                Tsum       = matrix(rbind(f,g,h,y),2,2)
+                e          = eigen(Tsum)     # spectral decomposition
+                Q          = e$vectors       # find eigenvectors of Tsum
+                maxim      = max(abs(Q-Qold))
+                if ((maxim<preQ)|(g>maxiter)) break
+            }  
+            J      = diag(p)
+            J[m,m] = Q[1,1]
+            J[m,j] = Q[1,2]
+            J[j,m] = Q[2,1]
+            J[j,j] = Q[2,2]
+            B      = B%*%J
+            m      = m+1
+            print(m)
+        }
+        j      = j+1
+    }
     maximum  = max(abs(B-Bold))
     if ((maximum<preB)|(f>maxit)) break
-    }
+}
     
 lambda1     = array(t(B),c(p,p,k))*A*(array(B,c(p,p,k)))
 lambda      = array(c(diag(lambda1[,,1])), c(p,1,3))
