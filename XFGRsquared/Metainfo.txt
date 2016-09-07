@@ -1,4 +1,3 @@
-
 Name of Quantlet: XFGRsquared   
 
 Published in: Applied Quantitative Finance
@@ -11,6 +10,6 @@ See also: 'XFGELESC, XFGIndustryBreakdown, XFGRegionsBreakdown, XFGriskaversion,
 
 Author: Ludger Overbeck, Maria Sokolova
 
-Submitted: 2015-02-19 by Lukas Borke
+Submitted: Thu, February 19 2015 by Lukas Borke
 
 Example: 'XFGRsquared.png'

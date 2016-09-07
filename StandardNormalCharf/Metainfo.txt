@@ -1,35 +1,20 @@
-Published in:		Applied Quantitative Finance
+Name of QuantLet: StandardNormalCharf
 
-Description:		'StandardNormalCharf computes the characteristic function of a one-dimensional normally distributed random variable.'
+Published in: Applied Quantitative Finance
 
-Keywords:		characteristic function, normal, normal-distribution
+Description: 'Computes the characteristic function of a one-dimensional normally distributed random variable.'
 
-See also:		XFGqDGtest, gFourierInversion
+Keywords: characteristic function, normal, normal-distribution
 
-Author:			Awdesch Melzer
+See also: XFGqDGtest, gFourierInversion
 
-Submitted:		Tue, June 04 2013 by Awdesch Melzer
+Author:	Awdesch Melzer
 
-Usage:			r = StandardNormalCharf(t,l)
+Submitted: Tue, June 04 2013 by Awdesch Melzer
 
-Input:
-'t- scalar, complex number indicating the point at which the characteristic function should be calculated'
-'l- list, containing l$mu (the expectation) and l$sigma (the standard deviation) of the Standard Normal Distribution'
+Input: 't: scalar, complex number indicating the point at which the characteristic function should be calculated. l: list, containing l$mu (the expectation) and l$sigma (the standard deviation) of the Standard Normal Distribution.'
 
-Output:
+Output: 'r: scalar, complex number representing the value of the characteristic function at t'
 
-r- scalar, complex number representing the value of the characteristic function at t
-
-Example:
-
-Please mind the necessary subroutines.
-mu = 0 
-sigma = 1 
-l = list(mu=mu,sigma=sigma) 
-t = compl(1,1) 
-StandardNormalCharf(t,l)
-
-Result: Contents of r$re 
-[1,] 0.5403 
-Contents of r$im 
-[1,] -0.84147 
+Example: 'Please mind the necessary subroutines. mu = 0 sigma = 1 l = list(mu=mu,sigma=sigma) t = compl(1,1) r= StandardNormalCharf(t,l).
+          Result: Contents of r$re [1,] 0.5403. Contents of r$im [1,] -0.84147.'

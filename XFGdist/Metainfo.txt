@@ -1,11 +1,13 @@
+Name of QuantLet: XFGdist
+
 Published in: Applied Quantitative Finance
 
-Description: Plots empirical vs. normal distribution
+Description: Plots empirical vs. normal distribution.
 
-Author: Germar Knöchlein, Awdesch Melzer
+Author: Germar Knoechlein, Awdesch Melzer
 
 Submitted: Sat, June 16 2012 by Dedy Dwi Prastyo
 
-Datafiles: XFGINAAA.dat, XFGUSTF.dat
+Datafile: XFGINAAA.dat, XFGUSTF.dat
 
 
