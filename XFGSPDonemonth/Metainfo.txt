@@ -1,3 +1,5 @@
+Name of QuantLet: XFGSPDonemonth
+
 Published in: Applied Quantitative Finance
 
 Description: 'Computes and plots the local polynomial state-price density for January 10, 1997 for a tau sequence from 0 to 1, employing Breeden and Litzenberger (BL) method and a semi-parametric specification of the Black-Scholes option pricing function. The analytic formula of the BL method uses an estimate of the volatility smile and its first and second derivative to calculate the SPD. The SPD is shown for different values of moneyness and time to maturity.'
@@ -10,6 +12,6 @@ Author: Awdesch Melzer
 
 Submitted: Wed, July 09 2014 by Awdesch Melzer
 
-Datafiles: XFGData9701.dat
+Datafile: XFGData9701.dat
 
 Example: 'SPD of one month of Dax values (January 1997) for time to maturity stepsize of 0.25.'

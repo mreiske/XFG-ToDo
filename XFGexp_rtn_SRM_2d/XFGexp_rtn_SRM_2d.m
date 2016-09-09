@@ -2,6 +2,7 @@ clear all; tic;
 p      = 2;                 % number of assets 
 T      = 250;
 alpha  = 0.05;
+
 % Model parameters
 Offset = [0.01, 0.0105];    % constant in the AR model
 theta  = [0.02, 0.0199];    % AR(1) coefficient
@@ -48,8 +49,7 @@ while sum_flag < ite
         end
     end
     SORT_r = sort(r);
-
-  % Model estimation
+    % Model estimation
     spec = garchset('VarianceModel','EGARCH','R',1,'P',1,'Q',1,'Dist','t');
     spec = garchset(spec, 'Display', 'off');
     for m = 1:p
@@ -60,17 +60,14 @@ while sum_flag < ite
         hat_epsilon(:, m) = Innovations./Sigmas;  
         S(m, m)           = Sigmas(end);
     end
-   
     B = zeros(p, p);
     for ii = 1 : p
         B(ii, ii) = r(T, ii);
     end
     R             = hat_phi0' + (hat_phi1 * B)'; % expected return
-    
-  % Compute the upper bound of the risk
+    % Compute the upper bound of the risk
     Weight1       = [0.5 0.5];
     hat_epsilon_p = hat_epsilon * S * Weight1';  
-
     for j = 1:q+1   
         if j > 1
             alpha(j) = (q - j + 1)/q;
@@ -78,13 +75,12 @@ while sum_flag < ite
             alpha(j) = 0.99;
         end
     end
-       
     for j=1:q 
-       % xi*, VaR of -kappa
+        % xi*, VaR of -kappa
         var1(j)       = -prctile(hat_epsilon_p, alpha(j) * 100); 
         % ES > 0, ES*, ES of -kappa 
         ES_alpha1(j)  = -sum(hat_epsilon_p(-hat_epsilon_p > var1(j)))/...
-                       max(T * alpha(j),10^(-8));  
+            max(T * alpha(j),10^(-8));  
         if j > 1
             phi1_1(j) = nu * exp(-nu * (alpha(j)))/(1-exp(-nu));     % phi
             phi2_1(j) = nu * exp(-nu * (alpha(j+1)))/(1-exp(-nu));   % phi
@@ -99,8 +95,7 @@ while sum_flag < ite
     aaa   = w1./(T * alpha(1:q));
     SRM1  = w1 * ES_alpha1(1:q)';
     SRMf1 = -R' * Weight1' + SRM1;   % for portfolio
-    
-  % Linear programming
+    % Linear programming
     f                                   = [zeros(1, q), -R' zeros(1, q*T)];      
     lb                                  = [-10^6*ones(q, 1); zeros(p+q*T,1)];    
     b                                   = [1; SRMf1; zeros(q*T,1)];              
@@ -121,10 +116,9 @@ while sum_flag < ite
     weight_SUM  = 0;
     if exitflag == 1       
         weight(:,1) = ww(q+1:q+p);  % Optimal weights obtained from the LP
-        weight_SUM  = sum(weight)   % Sum of the weights of the optimal 
+        weight_SUM  = sum(weight);  % Sum of the weights of the optimal 
                                     % portfolio obtained from the LP        
     end
-    
     % Note that in this demonstration, we focus on the case of c_1 + c_2 =1 
     % for comparison. In general, this constraint is not necessary. 
     if weight_SUM > 0.9999
@@ -140,11 +134,10 @@ for mm = 1 : length(c1)
     rrr(mm)    = [c1(mm) c2(mm)] * R;
     Weight     = [c1(mm) c2(mm)];
     epsilon_t1 = hat_epsilon * S * Weight';
-    
     for j = 1:q   
         var2(mm, j)      = -prctile(epsilon_t1, alpha(j) * 100); 
         ES_alpha2(mm, j) = -sum(epsilon_t1(-epsilon_t1 > var2(mm, j)))/...
-                           max(T * alpha(j),10^(-8));                
+            max(T * alpha(j),10^(-8));                
     end
     SRM2(mm)  = w1 * ES_alpha2(mm, 1:q)'; 
     SRMf2(mm) = -R' * Weight' + SRM2(mm); % for portfolio

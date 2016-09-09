@@ -1,6 +1,8 @@
+Name of QuantLet: XFGVaRestMC
+
 Published in: Applied Quantitative Finance
 
-Description: 'XFGVaRestMC Illustrates the computation of the Value at Risk using the Delta-Gamma method. "PS": Plain vanilla sampling method "MS": Moment matching sampling method "SS": Stratified Latin Hypercube sampling method "IS": Importance sampling method'
+Description: 'Illustrates the computation of the Value at Risk using the Delta-Gamma method. "PS": Plain vanilla sampling method "MS": Moment matching sampling method "SS": Stratified Latin Hypercube sampling method "IS": Importance sampling method'
 
 Keywords: VaR, delta-gamma
 
@@ -10,6 +12,6 @@ Author: Awdesch Melzer
 
 Submitted: Mon, May 27 2013 by Awdesch Melzer
 
-Datafiles: VaRcovmatrix.dat, VaRdelta.dat, VaRgamma.dat
+Datafile: VaRcovmatrix.dat, VaRdelta.dat, VaRgamma.dat
 
-Output: - VaR value
+Output: VaR value

@@ -23,14 +23,14 @@ graphics.off()
 
 # define summarize function
 summarize = function(x){
-Minimum = apply(x,2,min)
-Maximum = apply(x,2,max)
-Mean = apply(x,2,mean)
-Median = apply(x,2,median)
-Std.Error = apply(x,2,sd)
+    Minimum   = apply(x,2,min)
+    Maximum   = apply(x,2,max)
+    Mean      = apply(x,2,mean)
+    Median    = apply(x,2,median)
+    Std.Error = apply(x,2,sd)
 
-table = cbind(Minimum, Maximum, Mean, Median, Std.Error)
-print(table)
+    table = cbind(Minimum, Maximum, Mean, Median, Std.Error)
+    print(table)
 }
 
 # load data

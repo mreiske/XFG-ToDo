@@ -1,12 +1,13 @@
 function y = kernel(u, type)
 % Kernel
 % Usage
-%   y = kernel(x, type)
+    % y = kernel(x, type)
 % Input
-%   x, type
+    % x, type
 % Output
-%   y
-% y= 15/16/bandwith.*((1-(u./bandwith).^2).^2).*(abs(u)<=1) 
+    % y
+% y = 15/16/bandwith.*((1-(u./bandwith).^2).^2).*(abs(u)<=1) 
+
 if type == 1        % Quartic
     y= 15/16.*((1-(u).^2).^2).*(abs(u)<=1); 
 end
