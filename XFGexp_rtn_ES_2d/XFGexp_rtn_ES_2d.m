@@ -30,8 +30,8 @@ SR1      = Mean1/STD(1);
 SR2      = Mean2/STD(2);
 
 % t-distribution
-degree = 10;
-E      = 2*sqrt((degree-2)/pi)*gamma((degree+1)/2)/gamma(degree/2)/(degree-1);
+degree   = 10;
+E        = 2*sqrt((degree-2)/pi)*gamma((degree+1)/2)/gamma(degree/2)/(degree-1);
 
 ite      = 1;
 sum_flag = 0;
@@ -41,11 +41,11 @@ while sum_flag < ite
         r(1, m) = Offset(1, m) + sqrt(sigma2(1, m))*epsilon(1, m); 
         for i = 2:T
             sigma2(i, m) =...
-                exp( garch(m) * log(sigma2(i-1, m)) +...
-                k(m) + L(m) * epsilon(i-1, m) +...
-                arch(m) * (abs(epsilon(i-1, m))- E) );        
+            exp( garch(m) * log(sigma2(i-1, m)) +...
+            k(m) + L(m) * epsilon(i-1, m) +...
+            arch(m) * (abs(epsilon(i-1, m))- E) );        
             r(i, m) = Offset(m) + theta(m) * r(i-1) +...
-                sqrt(sigma2(i, m))*epsilon(i, m); % return
+            sqrt(sigma2(i, m))*epsilon(i, m); % return
         end
     end
     SORT_R = sort(r);
@@ -61,24 +61,22 @@ while sum_flag < ite
         hat_epsilon(:, m) = Innovations./Sigmas;  
         S(m, m)           = Sigmas(end);
     end
-    
     B = zeros(p, p);
     for ii = 1 : p
         B(ii, ii) = r(T, ii);
     end
-    
     R             = hat_phi0' + (hat_phi1 * B)'; % expected return
 
-  % Compute the upper bound of the risk
+    % Compute the upper bound of the risk
     Weight1       = [0.5 0.5];
-    
     hat_epsilon_p = hat_epsilon * S * Weight1';    % kappa_{t+1}
     var1          = - prctile(hat_epsilon_p, alpha * 100); % xi*, VaR of -kappa
-  % ES > 0, ES*, ES of -kappa 
+  
+    % ES > 0, ES*, ES of -kappa 
     ES_alpha1     = -sum(hat_epsilon_p(-hat_epsilon_p > var1)) /(T * alpha);  
     ES_alphaf1    = -R' * Weight1' + ES_alpha1;    % for portfolio
     
-  % Linear programming
+    % Linear programming
     f                     = [0, -R' zeros(1, T)];        
     lb                    = [-10^6; zeros(T+p,1)];          
     b                     = [1; ES_alphaf1; zeros(T,1)];      
@@ -96,9 +94,8 @@ while sum_flag < ite
 
     weight_SUM  = 0; 
     if exitflag == 1
-
         weight(:,1) = ww(2:p+1);  % The optimal weights obtained from the LP
-        weight_SUM  = sum(weight) % The sum of the weights of the optimal 
+        weight_SUM  = sum(weight); % The sum of the weights of the optimal 
                                   % portfolio obtained from the LP        
     end
     
@@ -140,7 +137,6 @@ plot(x, y1, 'g.', x3, y3, 'rO', x(y4_i1), rrr(y4_i1), 'b.');
 title('ES with alpha = 0.05 and p = 2');
 xlabel('c_1');
 ylabel('Expected return');
-
 
 subplot(2, 1, 2);
 y1                = ES_alphaf2;                     % Values of ES under different weights

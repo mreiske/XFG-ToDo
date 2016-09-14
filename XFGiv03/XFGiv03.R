@@ -4,12 +4,12 @@ graphics.off()
 
 # setwd("C:/...")
 
-  x = read.table("XFGIVTermStructure.dat") # load data
+x  = read.table("XFGIVTermStructure.dat") # load data
 
-  x1 = cbind(1:8,x[,1])                    # prepare for plotting
-  x2 = cbind(1:8,x[,2])
-  x3 = cbind(1:8,x[,3])
-  x4 = cbind(1:8,x[,4])
+x1 = cbind(1:8,x[,1])                    # prepare for plotting
+x2 = cbind(1:8,x[,2])
+x3 = cbind(1:8,x[,3])
+x4 = cbind(1:8,x[,4])
 
 plot(x1,type="l",col="blue3",ylim=c(0.20,0.5),lwd=2,xlab="Subindex",ylab="Percentage [%]")
 lines(x2,col="darkgreen",lwd=2)

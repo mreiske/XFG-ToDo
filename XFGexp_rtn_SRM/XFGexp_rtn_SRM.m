@@ -44,7 +44,8 @@ for m = 1:p
             exp( garch(m) * log(sigma2(i-1, m)) +...
             k(m) + L(m) * epsilon(i-1, m) +...
             arch(m) * (abs(epsilon(i-1, m))- E) );        
-        r(i, m)      = Offset(m) + theta(m) * r(i-1) +...
+        r(i, m)      =...
+            Offset(m) + theta(m) * r(i-1) +...
             sqrt(sigma2(i, m))*epsilon(i, m); % rtn
     end
 end
@@ -63,29 +64,24 @@ for z = 1:TT-move+1
         hat_epsilon(:, m) = Innovations./Sigmas;  
         S(m, m)           = Sigmas(end);            
     end
-          
     B = zeros(p, p);
     for ii = 1 : p
         B(ii, ii) = r(move, ii);
     end
     R = hat_phi0' + (hat_phi1 * B)'; % Expected returns
-        
-  % The upper bound of the risk
+    % The upper bound of the risk
     Weight1       = ones(1, p)/p;
     hat_epsilon_p = hat_epsilon * S * Weight1';
-        
     for j = 1:q+1   
         if j > 1
-           alpha(j) = (q - j + 1)/q;
+            alpha(j) = (q - j + 1)/q;
         else
-           alpha(j) = 0.99;
+            alpha(j) = 0.99;
         end
     end
-
     for ib = 1:length(b)
         [z ib] 
         g = b(ib)*log(ep) - (1+b(ib)) * log(1+b(ib)) + (1+b(ib)) - ep;
-        
         for j=1:q 
             var1(j)      = -prctile(hat_epsilon_p, alpha(j) * 100); % xi*
             ES_alpha1(j) = -sum(hat_epsilon_p(-hat_epsilon_p > var1(j)))/...
@@ -112,22 +108,18 @@ for z = 1:TT-move+1
                 w(j) = alpha(j) * phi1_1(j);
             end
         end
-            
         w1    = w/sum(w);
         aaa   = w1./(move * alpha(1:q));
         SRM1  = w1 * ES_alpha1(1:q)';  % SRM*
         SRMf1 = -R' * Weight1' + SRM1; % The SRM of the portfolio      
-
         f     = [zeros(1, q), -R' zeros(1, q*move)];    % loss
         lb    = [-10^6*ones(q, 1); zeros(p+q*move,1)];  % weights >= 0
         bb    = [1; SRMf1; zeros(q*move,1)];            % L = SRM1 
-    
-    
         % The matrix A 
-        A                                 = zeros(q*move + 2,q+q*move + p);  
-        A(1, q+1:p+q)                     = 1;           
-        A(2,1:q)                          = w1;          
-        A(2,q+1:q+p)                      = -sum(w1)*R;  
+        A             = zeros(q*move + 2,q+q*move + p);  
+        A(1, q+1:p+q) = 1;           
+        A(2,1:q)      = w1;          
+        A(2,q+1:q+p)   = -sum(w1)*R;  
         for j = 1 : q 
             A(2,p+q+(j-1)*move + 1 : q+j*move + p)      = aaa(j);   
             A((j-1)*move + 2 + 1 : j*move + 2, q+1:q+p) = ...
@@ -135,12 +127,11 @@ for z = 1:TT-move+1
             A(2+(j-1)*move + 1:2+j*move,j)              = -1;
         end
         A(3:q*move + 2, q+p+1:q+p+q*move) = -eye(q*move);
-    
-      % Linear programing
+        % Linear programing
         [WW, min, exitflag] = linprog(f, A, bb ,[], [], lb);
         if exitflag == 1
-           weight1     = WW(q+1:q+p);  % Estimated weights
-           Min_b(ib,z) = -min                   
+            weight1     = WW(q+1:q+p);  % Estimated weights
+            Min_b(ib,z) = -min;                   
         end       
     end
 end

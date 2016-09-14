@@ -1,9 +1,0 @@
-Published in: Applied Quantitative Finance
-
-Description: Counts VaR exceedences for basic simulation data
-
-Author: Germar Knöchlein, Awdesch Melzer
-
-Submitted: Fri, June 29 2012 by Dedy Dwi Prastyo
-
-Datafiles: XFGMMPL.dat, XFGPL.dat
