@@ -4,8 +4,6 @@ Published in: Applied Quantitative Finance
 
 Description: 'Generates a P-P Plot for Backtesting of 1) basic simulation, mean adjustment, volatility updating and volatility updating and mean adjustment simulations as well as of 2) benchmark curve, spread curve, conservative approach and simultaneous simulation. All simulated data follow chapter 2.4 in XFG2.'
 
-Keywords: 
-
 Author: Christoph Frisch, Awdesch Melzer
 
 Submitted: Fri, June 29 2012 by Dedy Dwi Prastyo

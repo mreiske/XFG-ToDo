@@ -2,7 +2,7 @@ Name of QuantLet: XFGexc
 
 Published in: Applied Quantitative Finance
 
-Description: Counts VaR exceedences for basic simulation data.
+Description: Counts VaR exceedences for basic simulation data. 
 
 Author: Germar Knoechlein, Awdesch Melzer
 

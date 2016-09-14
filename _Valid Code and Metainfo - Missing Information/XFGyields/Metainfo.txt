@@ -1,0 +1,13 @@
+Name of QuantLet: XFGyields
+
+Published in: Applied Quantitative Finance
+
+Description: 'Displays averaged yields'
+
+Author: Germar Knoechlein, Awdesch Melzer
+
+Submitted: Sat, June 16 2012 by Dedy Dwi Prastyo
+
+Datafile: XFGINAAA.dat, XFGUSTF.dat
+
+Example: 'yields for different risk levels.png'

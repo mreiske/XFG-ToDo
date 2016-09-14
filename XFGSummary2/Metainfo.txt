@@ -6,6 +6,8 @@ Description: 'Provides an overview of the data used in the estimation of the SV,
 
 Keywords: Markov, kurtosis, mean, quantile, skewness, summary, time-series, volatility
 
+Author: 
+
 Submitted: Mon, November 17 2014 by Felix Jung
 
 Usage: 'Set working directory to source file location. The function is called by sumStat(X), with X being the data.'
