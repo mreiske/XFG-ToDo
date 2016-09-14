@@ -5,7 +5,7 @@ graphics.off()
 
 # set working directory to source file location and read the data
 # setwd("C:/...")
-x = read.table("XFGSummary2Returns", header = TRUE)
+x = read.table("Returns.txt", header = TRUE)
 
 
 # define the function
