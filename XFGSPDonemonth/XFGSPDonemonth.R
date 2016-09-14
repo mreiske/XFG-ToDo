@@ -1,7 +1,7 @@
 rm(list=ls(all=TRUE))
 graphics.off()
 
-install.packages("locpol")
+# install.packages("locpol")
 library(locpol)
 
 # Specify your working directory

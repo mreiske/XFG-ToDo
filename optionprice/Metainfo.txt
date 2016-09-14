@@ -1,5 +1,0 @@
-Published in: Applied Quantitative Finance
-
-Description: Required by XFGIBT03.m.
-
-Submitted: Fri, July 27 2012 by Dedy Dwi Prastyo
