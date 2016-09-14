@@ -1,0 +1,14 @@
+
+Name of Quantlet: XFGIBTcdk 
+
+Published in: Applied Quantitative Finance
+
+Description: 'Required by XFGIBT03.m.'
+
+Keywords: implied, binomial tree, blackscholes, options, state prices
+
+See also: XFGLSK, XFGSPDcb2, XFGSPDcom, kernel, nw
+
+Author: Jun Zheng
+
+Submitted: 2012-07-27 by Dedy Dwi Prastyo

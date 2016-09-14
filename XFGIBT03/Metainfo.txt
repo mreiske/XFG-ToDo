@@ -1,0 +1,18 @@
+
+Name of Quantlet: XFGIBT03
+
+Published in: Applied Quantitative Finance
+
+Description: 'Outputs a plot of state price density estimations, from Derman and Kani IBT, Barle and Cakici IBT, and Monte-Carlo simulation. Require Eulerscheme.m, XFGIBTcdk.m, IBTsdisplot.m, XFGIBTcbc.m, regxest.m, and optionprice.m'
+
+Keywords: implied, binomial tree, blackscholes, options, state prices
+
+See also: XFGLSK, XFGSPDcb2, XFGSPDcom, kernel, nw
+
+Author: Jun Zheng
+
+Submitted: 2012-07-27 by Dedy Dwi Prastyo
+
+Datafiles: XFGIBT03.asv
+
+Example: '1.png'

@@ -1,0 +1,11 @@
+Name of QuantLet: optionprice
+
+Published in: Applied Quantitative Finance
+
+Description: Required by XFGIBT03.m.
+
+Keywords: 
+
+Author: 
+
+Submitted: Fri, July 27 2012 by Dedy Dwi Prastyo
