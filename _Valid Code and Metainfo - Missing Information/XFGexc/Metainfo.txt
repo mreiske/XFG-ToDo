@@ -1,0 +1,11 @@
+Name of QuantLet: XFGexc
+
+Published in: Applied Quantitative Finance
+
+Description: Counts VaR exceedences for basic simulation data. 
+
+Author: Germar Knoechlein, Awdesch Melzer
+
+Submitted: Fri, June 29 2012 by Dedy Dwi Prastyo
+
+Datafile: XFGMMPL.dat, XFGPL.dat

@@ -1,0 +1,11 @@
+Name of QuantLet: XFGsummary
+
+Published in: Applied Quantitative Finance
+
+Description: Descriptive Statistics
+
+Author: Germar Knoechlein, Awdesch Melzer
+
+Submitted: Sat, June 16 2012 by Dedy Dwi Prastyo
+
+Datafile: XFGINAAA.dat

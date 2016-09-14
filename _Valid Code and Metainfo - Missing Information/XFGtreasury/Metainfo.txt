@@ -1,0 +1,11 @@
+Name of QuantLet: XFGtreasury
+
+Published in: Applied Quantitative Finance
+
+Description: Plots Treasury Yields
+
+Author: Germar Knoechlein, Awdesch Melzer
+
+Submitted: Sat, June 16 2012 by Dedy Dwi Prastyo
+
+Datafile: XFGUSTF.dat
